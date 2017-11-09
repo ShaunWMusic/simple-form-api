@@ -25,7 +25,7 @@ class PidController {
     if (request.input('current')) {
       return response.jsonApi('Pid', request.authUser);
     }
-    const pid = yield Pid.with('stats').fetch();
+    const pid = yield Pid.fetch();
 
     response.jsonApi('Pid', pid);
   }

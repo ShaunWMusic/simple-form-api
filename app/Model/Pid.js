@@ -8,13 +8,16 @@ class Pid extends Lucid {
   apiTokens() {
     return this.hasMany('App/Model/Token');
   }
-  ae15m() {
-    return this.hasMany('App/Model/ae15m');
+  AE15m() {
+    return this.hasOne('App/Model/AE15m');
+  }
+  AE1m() {
+    return this.hasOne('App/Model/AE1m');
   }
 
-  stats() {
-    return this.hasOne('App/Model/Stats');
-  }
+  // stats() {
+  //   return this.hasOne('App/Model/Stats');
+  // }
 
   static get unguarded() {
     return false;

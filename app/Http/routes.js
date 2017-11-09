@@ -17,9 +17,9 @@
 
 const Route = use('Route');
 
-Route.post('/api/pid', 'PidController.store');
+Route.post('/api/pids', 'PidController.store');
 
-Route.resource('/api/pid', 'PidController')
+Route.resource('/api/pids', 'PidController')
   .only(['index', 'show', 'update', 'destroy']);
 
 // Route.resource('/api/pledges', 'PledgeController')

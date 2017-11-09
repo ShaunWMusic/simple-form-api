@@ -5,8 +5,22 @@ class Pid extends JsonApiView {
     return ['email', 'is_admin', 'is_approved'];
   }
 
-  stats() {
-    return this.belongsTo('App/Http/JsonApiViews/Stats', {
+  AE15m() {
+    return this.belongsTo('App/Http/JsonApiViews/AE15m', {
+      included: true,
+      excludeRelation: 'pid',
+    });
+  },
+
+  AE1m() {
+    return this.belongsTo('App/Http/JsonApiViews/AE1m', {
+      included: true,
+      excludeRelation: 'pid',
+    });
+  },
+
+  AE1m() {
+    return this.belongsTo('App/Http/JsonApiViews/AE1m', {
       included: true,
       excludeRelation: 'pid',
     });
