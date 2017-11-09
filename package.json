@@ -1,0 +1,57 @@
+{
+  "name": "adonis-app",
+  "version": "3.1.0",
+  "main": "server.js",
+  "engines": {
+    "node": "7.2.1"
+  },
+  "scripts": {
+    "dev": "nodemon --watch app --watch bootstrap --watch config --watch .env -x node server.js",
+    "start": "node server.js",
+    "environment": "cp .env.example .env && node ace key:generate",
+    "migrate": "node ace migration:run --force",
+    "refresh": "node ace migration:refresh --force",
+    "seed": "node ace db:seed --force",
+    "lint": "eslint",
+    "test": "ENV_PATH=.env.test cucumber.js tests -r tests/steps",
+    "tdd": "nodemon --watch app --watch bootstrap --watch config --watch .env.testing --watch tests -x npm run test"
+  },
+  "author": "",
+  "license": "MIT",
+  "description": "",
+  "private": true,
+  "dependencies": {
+    "adonis-ace": "^3.0.4",
+    "adonis-auth": "^1.0.4",
+    "adonis-commands": "rtablada/adonis-commands#feature/key-echo",
+    "adonis-fold": "^3.0.3",
+    "adonis-framework": "^3.0.5",
+    "adonis-generators": "^0.6.1",
+    "adonis-jsonapi": "^0.7.0",
+    "adonis-lucid": "^3.0.10",
+    "adonis-middleware": "^1.0.8",
+    "adonis-validation-provider": "^3.0.4",
+    "file-system": "^2.2.2",
+    "mssql": "^4.1.0",
+    "mysql": "^2.15.0",
+    "node-geocoder": "^3.15.1",
+    "pg": "^6.1.0",
+    "sqlite3": "^3.1.8",
+    "underscore": "^1.8.3",
+    "youch": "^1.0.1"
+  },
+  "autoload": {
+    "App": "./app"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "cucumber": "^2.0.0-rc.1",
+    "dot-object": "^1.5.4",
+    "eslint": "^3.10.2",
+    "eslint-config-rtablada": "^4.0.0",
+    "faker": "^3.1.0",
+    "mocha": "^3.2.0",
+    "node-fetch": "^1.6.3",
+    "nodemon": "^1.11.0"
+  }
+}
