@@ -6,9 +6,9 @@ const attributes = ['name'];
 class AE15mController {
 
   async index(request, response) {
-    const categories = await AE15m.with('organizations').fetch();
+    const Pid = await AE15m.with('organizations').fetch();
 
-    response.jsonApi('AE15m', categories);
+    response.jsonApi('AE15m', Pid);
   }
 
   async store(request, response) {
