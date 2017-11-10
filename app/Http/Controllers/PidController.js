@@ -21,36 +21,36 @@ class PidController {
     };
   }
 
-  * index(request, response) {
+  async index(request, response) {
     if (request.input('current')) {
       return response.jsonApi('Pid', request.authUser);
     }
-    const pid = yield Pid.fetch();
+    const pid = await Pid.fetch();
 
     response.jsonApi('Pid', pid);
   }
 
-  * store(request, response) {
+  async store(request, response) {
     const input = request.jsonApi.getAttributesSnakeCase(storeAttributes);
 
-    yield request.jsonApi.assertValid(input, this.createRules, this.createMessages);
+    await request.jsonApi.assertValid(input, this.createRules, this.createMessages);
 
-    input.password = yield Hash.make(input.password);
+    input.password = await Hash.make(input.password);
     const foreignKeys = {
     };
-    const pid = yield Pid.create(Object.assign({}, input, foreignKeys));
+    const pid = await Pid.create(Object.assign({}, input, foreignKeys));
 
     response.jsonApi('Pid', pid);
   }
 
-  * show(request, response) {
+  async show(request, response) {
     const id = request.param('id');
-    const pid = yield Pid.with('stats').where({ id }).firstOrFail();
+    const pid = await Pid.with('stats').where({ id }).firstOrFail();
 
     response.jsonApi('Pid', pid);
   }
 
-  * update(request, response) {
+  async update(request, response) {
     const id = request.param('id');
     request.jsonApi.assertId(id);
 
@@ -58,18 +58,18 @@ class PidController {
     const foreignKeys = {
     };
 
-    const pid = yield Pid.with('stats').where({ id }).firstOrFail();
+    const pid = await Pid.with('stats').where({ id }).firstOrFail();
     pid.fill(Object.assign({}, input, foreignKeys));
-    yield pid.save();
+    await pid.save();
 
     response.jsonApi('Pid', pid);
   }
 
-  * destroy(request, response) {
+  async destroy(request, response) {
     const id = request.param('id');
 
-    const pid = yield Pid.query().where({ id }).firstOrFail();
-    yield pid.delete();
+    const pid = await Pid.query().where({ id }).firstOrFail();
+    await pid.delete();
 
     response.status(204).send();
   }
