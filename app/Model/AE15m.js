@@ -1,3 +1,5 @@
+//This is fun
+
 'use strict';
 
 const Lucid = use('Lucid');
