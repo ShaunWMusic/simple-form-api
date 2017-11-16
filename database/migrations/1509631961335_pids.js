@@ -2,7 +2,7 @@
 
 const Schema = use('Schema')
 
-class PidTableSchema extends Schema {
+class PidsTableSchema extends Schema {
 
   up () {
     this.create('pids', (table) => {
@@ -14,7 +14,6 @@ class PidTableSchema extends Schema {
       table.string('password', 60).notNullable();
       table.string('jobtitle', 80).notNullable();
       table.string('managername', 80).notNullable();
-      table.string('city', 80).notNullable();
       table.string('division', 80).notNullable();
       table.string('region', 80).notNullable();
       table.boolean('is_admin').default(true);
@@ -29,4 +28,4 @@ class PidTableSchema extends Schema {
 
 }
 
-module.exports = PidTableSchema
+module.exports = PidsTableSchema

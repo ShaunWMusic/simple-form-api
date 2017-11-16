@@ -6,7 +6,7 @@ class AE15m extends JsonApiView {
   }
 
   pid() {
-    return this.hasMany('App/Http/JsonApiViews/Pid', {
+    return this.hasMany('App/Http/JsonApiViews/Pids', {
       included: true,
       excludeRelation: 'ae15m'
     });

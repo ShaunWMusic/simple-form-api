@@ -5,29 +5,29 @@ const attributes = ['name'];
 
 class AE15mController {
 
-  async index(request, response) {
-    const Pid = await AE15m.with('organizations').fetch();
+  * index(request, response) {
+    const Pid = yield AE15m.with('organizations').fetch();
 
     response.jsonApi('AE15m', Pid);
   }
 
-  async store(request, response) {
+  * store(request, response) {
     const input = request.jsonApi.getAttributesSnakeCase(attributes);
     const foreignKeys = {
     };
-    const category = await AE15m.create(Object.assign({}, input, foreignKeys));
+    const category = yield AE15m.create(Object.assign({}, input, foreignKeys));
 
     response.jsonApi('AE15m', category);
   }
 
-  async show(request, response) {
+  * show(request, response) {
     const id = request.param('id');
-    const category = await AE15m.with('organizations').where({ id }).firstOrFail();
+    const category = yield AE15m.with('organizations').where({ id }).firstOrFail();
 
     response.jsonApi('AE15m', category);
   }
 
-  async update(request, response) {
+  * update(request, response) {
     const id = request.param('id');
     request.jsonApi.assertId(id);
 
@@ -35,18 +35,18 @@ class AE15mController {
     const foreignKeys = {
     };
 
-    const category = await AE15m.with('organizations').where({ id }).firstOrFail();
+    const category = yield AE15m.with('organizations').where({ id }).firstOrFail();
     category.fill(Object.assign({}, input, foreignKeys));
-    await category.save();
+    yield category.save();
 
     response.jsonApi('AE15m', category);
   }
 
-  async destroy(request, response) {
+  * destroy(request, response) {
     const id = request.param('id');
 
-    const category = await AE15m.query().where({ id }).firstOrFail();
-    await category.delete();
+    const category = yield AE15m.query().where({ id }).firstOrFail();
+    yield category.delete();
 
     response.status(204).send();
   }

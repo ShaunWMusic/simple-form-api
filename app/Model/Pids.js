@@ -3,7 +3,7 @@
 const Lucid = use('Lucid');
 const _ = require('underscore');
 
-class Pid extends Lucid {
+class Pids extends Lucid {
 
   apiTokens() {
     return this.hasMany('App/Model/Token');
@@ -32,7 +32,6 @@ class Pid extends Lucid {
       'password',
       'jobtitle',
       'managername',
-      'city',
       'division',
       'region',
       'is_approved',
@@ -60,4 +59,4 @@ class Pid extends Lucid {
 
 }
 
-module.exports = Pid;
+module.exports = Pids;

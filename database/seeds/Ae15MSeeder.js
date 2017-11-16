@@ -13,8 +13,8 @@
 const Factory = use('Factory')
 
 class Ae15MSeeder {
-  async run () {
-     Factory.model('App/Model/Pid').create(5)
+  * run () {
+     Factory.model('App/Model/Pids').create(5)
   }
 }
 

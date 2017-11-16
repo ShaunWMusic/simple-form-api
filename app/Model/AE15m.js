@@ -8,7 +8,7 @@ class AE15m extends Lucid {
 
 
   pids() {
-    return this.belongsToMany('App/Model/Pid');
+    return this.belongsToMany('App/Model/Pids');
   }
 }
 
