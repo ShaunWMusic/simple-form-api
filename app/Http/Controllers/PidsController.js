@@ -1,5 +1,4 @@
 'use strict';
-
 const Pids = use('App/Model/Pids');
 
 const Hash = use('Hash');

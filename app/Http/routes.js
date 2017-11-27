@@ -24,8 +24,8 @@ Route.resource('/sign/profile/images', 'UploadsController')
 
 Route.post('/api/pids', 'PidsController.store');
 
-Route.resource('/api/pids', 'PidsController')
-  .only(['index', 'show', 'update', 'destroy']);
+// Route.resource('/api/pids', 'PidsController')
+//   .only(['index', 'show', 'update', 'destroy']);
 
 Route.resource('/api/uploads', 'UploadsController')
   .only(['index', 'show', 'update', 'destroy']);
