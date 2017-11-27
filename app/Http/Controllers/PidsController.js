@@ -3,7 +3,8 @@
 const Pids = use('App/Model/Pids');
 
 const Hash = use('Hash');
-const storeAttributes = ['pid', 'firstname', 'lastname', 'email', 'password', 'jobtitle', 'managername', 'division', 'region'];
+// const storeAttributes = ['pid', 'firstname', 'lastname', 'email', 'password', 'managername', 'division', 'region'];
+const storeAttributes = ['pid', 'firstname', 'lastname', 'email', 'password', 'managername'];
 const updateAttributes = ['email', 'is-approved', 'is-admin'];
 
 class PidsController {
@@ -44,7 +45,7 @@ class PidsController {
 
   * show(request, response) {
     const id = request.param('id');
-    const pid = yield Pid.with('ae15m').where({ id }).firstOrFail();
+    const pid = yield Pids.with('ae15m').where({ id }).firstOrFail();
 
     response.jsonApi('Pids', pid);
   }

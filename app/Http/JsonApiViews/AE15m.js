@@ -2,10 +2,10 @@ const JsonApiView = require('adonis-jsonapi/src/JsonApiView');
 
 class AE15m extends JsonApiView {
   get attributes() {
-    return ['name'];
+    return ['name', 'fullyear', 'division'];
   }
 
-  pid() {
+  pids() {
     return this.hasMany('App/Http/JsonApiViews/Pids', {
       included: true,
       excludeRelation: 'ae15m'
