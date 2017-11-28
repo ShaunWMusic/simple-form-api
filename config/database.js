@@ -2,7 +2,7 @@
 
 const Env = use('Env');
 const Helpers = use('Helpers');
-const fs = require('file-system');
+// const fs = require('file-system');
 
 module.exports = {
 
@@ -59,10 +59,10 @@ module.exports = {
   mysql: {
     client: 'mysql',
     connection: {
-      // host: Env.get('DB_HOST'),
-      // user: Env.get('DB_USER'),
-      // password: Env.get('DB_PASSWORD'),
-      database: Env.get('JAWSDB_URL'),
+      host: Env.get('CLEARDB_HOST'),
+      user: Env.get('CLEARDB_USER'),
+      password: Env.get('CLEARDB_PASSWORD'),
+      database: Env.get('CLEARDB_DATABASE')
       // debug: true,
       // ssl  : {
       //   key : fs.readFileSync('client-key.pem'),
