@@ -15,7 +15,7 @@ module.exports = {
   | interacting with SQL databases.
   |
   */
-  connection: Env.get('DB_CONNECTION', 'sqlite3'),
+  connection: Env.get('DB_CONNECTION', 'mysql'),
 
   /*
   |--------------------------------------------------------------------------
@@ -59,10 +59,10 @@ module.exports = {
   mysql: {
     client: 'mysql',
     connection: {
-      host: Env.get('DB_HOST'),
-      user: Env.get('DB_USER'),
-      password: Env.get('DB_PASSWORD'),
-      database: Env.get('DB_DATABASE'),
+      // host: Env.get('DB_HOST'),
+      // user: Env.get('DB_USER'),
+      // password: Env.get('DB_PASSWORD'),
+      database: Env.get('JAWSDB_URL'),
       // debug: true,
       // ssl  : {
       //   key : fs.readFileSync('client-key.pem'),
