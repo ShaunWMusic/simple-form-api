@@ -2,8 +2,8 @@
 const Pids = use('App/Model/Pids');
 
 const Hash = use('Hash');
-// const storeAttributes = ['pid', 'firstname', 'lastname', 'email', 'password', 'managername', 'division', 'region'];
-const storeAttributes = ['pid', 'firstname', 'lastname', 'email', 'password', 'managername'];
+const storeAttributes = ['pid', 'firstname', 'lastname', 'email', 'password', 'managername', 'division', 'region'];
+// const storeAttributes = ['pid', 'firstname', 'lastname', 'email', 'password', 'managername'];
 const updateAttributes = ['email', 'is-approved', 'is-admin'];
 
 class PidsController {

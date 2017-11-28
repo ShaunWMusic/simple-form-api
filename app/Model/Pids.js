@@ -31,8 +31,8 @@ class Pids extends Lucid {
       'email',
       'password',
       'managername',
-      // 'division',
-      // 'region',
+      'division',
+      'region',
       'is_approved',
       'is_admin',
     ];
