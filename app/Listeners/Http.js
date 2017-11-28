@@ -39,21 +39,21 @@ Http.handleError = function* (error, request, response) {
  * starting http server.
  */
 Http.onStart = function () {
-  var request = require('request');
-
-var options = {
-    proxy: process.env.QUOTAGUARDSTATIC_URL,
-    url: 'https://api.github.com/repos/joyent/node',
-    headers: {
-        'User-Agent': 'node.js'
-    }
-};
-
-function callback(error, response, body) {
-    if (!error && response.statusCode == 200) {
-        console.log(body);
-    }
-}
-
-request(options, callback);
+//   var request = require('request');
+//
+// var options = {
+//     proxy: process.env.QUOTAGUARDSTATIC_URL,
+//     url: 'http://ip.jsontest.com/',
+//     headers: {
+//         'User-Agent': 'node.js'
+//     }
+// };
+//
+// function callback(error, response, body) {
+//     if (!error && response.statusCode == 200) {
+//         console.log(body);
+//     }
+// }
+//
+// request(options, callback);
 };
