@@ -65,12 +65,12 @@ module.exports = {
       database: Env.get('DB_DATABASE'),
       // debug: true,
       ssl  : {
-        key : fs.readFileSync('client-key.pem'),
-        cert : fs.readFileSync('client-cert.pem'),
-        ca : fs.readFileSync('server-ca.pem')
-        // key : Env.get('SSL_CLIENT_KEY'),
-        // cert : Env.get('SSL_CERT'),
-        // ca : Env.get('SSL_SERVER_CA')
+        // key : fs.readFileSync('client-key.pem'),
+        // cert : fs.readFileSync('client-cert.pem'),
+        // ca : fs.readFileSync('server-ca.pem')
+        key : Env.get('SSL_CLIENT_KEY'),
+        cert : Env.get('SSL_CERT'),
+        ca : Env.get('SSL_SERVER_CA')
       }
     },
   },
