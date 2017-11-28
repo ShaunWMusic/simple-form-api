@@ -43,7 +43,7 @@ Http.onStart = function () {
 
 var options = {
     proxy: process.env.QUOTAGUARDSTATIC_URL,
-    url: 'http://ip.jsontest.com/',
+    url: 'https://api.github.com/repos/joyent/node',
     headers: {
         'User-Agent': 'node.js'
     }
