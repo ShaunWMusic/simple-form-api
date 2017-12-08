@@ -39,6 +39,9 @@ Http.handleError = function* (error, request, response) {
  * starting http server.
  */
 Http.onStart = function () {
+//   if(window.location.protocol == "http:") {
+//   window.location.protocol = "https:"
+// }
 //   var request = require('request');
 //
 // var options = {

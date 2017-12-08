@@ -3,21 +3,9 @@
 const Lucid = use('Lucid');
 const _ = require('underscore');
 
-class Pids extends Lucid {
+class Users extends Lucid {
 
-  apiTokens() {
-    return this.hasMany('App/Model/Token');
-  }
-  AE15m() {
-    return this.hasOne('App/Model/AE15m');
-  }
-  AE1m() {
-    return this.hasOne('App/Model/AE1m');
-  }
 
-  // stats() {
-  //   return this.hasOne('App/Model/Stats');
-  // }
 
   static get unguarded() {
     return false;
@@ -25,16 +13,8 @@ class Pids extends Lucid {
 
   static get fillable() {
     return [
-      'pid',
-      'firstname',
-      'lastname',
       'email',
-      'password',
-      'managername',
-      'division',
-      'region',
-      'is_approved',
-      'is_admin',
+      'password'
     ];
   }
 
@@ -58,4 +38,4 @@ class Pids extends Lucid {
 
 }
 
-module.exports = Pids;
+module.exports = Users;

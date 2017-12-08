@@ -15,7 +15,7 @@ module.exports = {
   | interacting with SQL databases.
   |
   */
-  connection: Env.get('DB_CONNECTION', 'mysql'),
+  connection: Env.get('DB_CONNECTION', 'sqlite'),
 
   /*
   |--------------------------------------------------------------------------
@@ -54,24 +54,28 @@ module.exports = {
   | npm i --save mysql
   |
   */
-// var ca = {key : fs.readFileSync('config' + '/client-key.pem'), cert : fs.readFileSync('config' + '/client-cert.pem'), ca : fs.readFileSync('config' + '/server-ca.pem')};
 
+// PRODUCTION DB
+  // mysql: {
+  //   client: 'mysql',
+  //   connection: {
+  //     host: Env.get('CLEARDB_HOST'),
+  //     user: Env.get('CLEARDB_USER'),
+  //     password: Env.get('CLEARDB_PASSWORD'),
+  //     database: Env.get('CLEARDB_DATABASE')
+  //     // debug: true,
+  //   },
+  // },
+  //
+// DEVELOPMENT DB
   mysql: {
     client: 'mysql',
     connection: {
-      host: Env.get('CLEARDB_HOST'),
-      user: Env.get('CLEARDB_USER'),
-      password: Env.get('CLEARDB_PASSWORD'),
-      database: Env.get('CLEARDB_DATABASE')
+      host: Env.get('DB_HOST'),
+      user: Env.get('DB_USER'),
+      password: Env.get('DB_PASSWORD'),
+      database: Env.get('DB_DATABASE'),
       // debug: true,
-      // ssl  : {
-      //   key : fs.readFileSync('client-key.pem'),
-      //   cert : fs.readFileSync('client-cert.pem'),
-      //   ca : fs.readFileSync('server-ca.pem')
-      //   // key : Env.get('SSL_CLIENT_KEY'),
-      //   // cert : Env.get('SSL_CERT'),
-      //   // ca : Env.get('SSL_SERVER_CA')
-      // }
     },
   },
 

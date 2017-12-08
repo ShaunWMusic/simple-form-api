@@ -17,28 +17,6 @@
 
 const Route = use('Route');
 
-// Route.on('/').render('welcome');
 
-Route.resource('/sign/profile/images', 'UploadsController')
-    .only(['index', 'show', 'update', 'destroy']);
 
-Route.post('/api/pids', 'PidsController.store');
-
-// Route.resource('/api/pids', 'PidsController')
-//   .only(['index', 'show', 'update', 'destroy']);
-
-Route.resource('/api/uploads', 'UploadsController')
-  .only(['index', 'show', 'update', 'destroy']);
-
-Route.resource('/api/stats', 'StatsController')
-  .except(['create', 'edit']);
-
-Route.resource('/api/ae15m', 'AE15mController')
-  .only(['index', 'show'])
-  .middleware('auth');
-
-// Route.resource('/api/pledges', 'PledgeController')
-//   .only(['store', 'update', 'destroy'])
-//   .middleware('auth');
-
-Route.post('/api/token-auth', 'SessionController.store');
+Route.post('/api/users', 'UsersController.store');
